@@ -1,4 +1,5 @@
-#  Vision-Controlled Robotic Arm
+#  3_DOF_robotic_arm
+
 
 Control a 4-servo robotic arm using nothing but your body — no joysticks, no controllers. A Python vision pipeline reads your arm angles and hand gestures in real time via webcam and translates them into smooth servo movements on an Arduino.
 
@@ -12,16 +13,6 @@ Control a 4-servo robotic arm using nothing but your body — no joysticks, no c
 - **Secondary arm control** — mode 3 lets you drive a second joint using your left arm
 - **Smooth motion** — Arduino-side `moveSmooth()` prevents jerky servo jumps; Python-side exponential filtering kills noise
 - **Throttled serial comms** — commands are sent at a fixed interval and only when values actually change, so the Arduino never gets flooded
-
----
-
-##  Project Structure
-
-```
-robotic-arm/
-├── arm_control.ino       # Arduino sketch — receives serial commands, drives 4 servos
-└── arm_vision.py         # Python script — webcam → MediaPipe → serial → Arduino
-```
 
 ---
 
